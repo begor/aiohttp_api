@@ -1,3 +1,8 @@
 app:
   wow: "such informative"
   very: "declarative"
+db:
+  user: "begor"
+  password: ""
+  host: "localhost"
+  database: "aiohttp"

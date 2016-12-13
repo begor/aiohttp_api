@@ -5,4 +5,5 @@ chardet==2.3.0
 multidict==2.1.4
 psycopg2==2.6.2
 PyYAML==3.12
+SQLAlchemy==1.1.4
 yarl==0.8.1
