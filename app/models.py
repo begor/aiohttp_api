@@ -9,5 +9,5 @@ note = sa.Table(
     sa.Column('updated_at', sa.Date, nullable=False),
     sa.Column('content', sa.Text, nullable=False),
 
-    sa.PrimaryKeyConstraint('id', name='question_id_pkey'))
+    sa.PrimaryKeyConstraint('id', name='question_id_pkey')
 )
