@@ -1,8 +1,5 @@
-app:
-  wow: "such informative"
-  very: "declarative"
 db:
-  user: "begor"
-  password: ""
+  user: "aiohttp"
+  password: "qwerty"
   host: "localhost"
   database: "aiohttp"
