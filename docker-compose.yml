@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./abuse:/usr/local/lib/python2.7/dist-packages/abuse
+      - .:/abuse
+    working_dir: /abuse
+    environment:
+      - "DATABASE_NAME=aiohttp"
+      - "DATABASE_USER=aiohttp"
+      - "DATABASE_PASSWORD=qwerty"
+    command: "python3 app.py"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:9.5
+    environment:
+      - "POSTGRES_DB=aiohttp"
+      - "POSTGRES_USER=aiohttp"
+      - "POSTGRES_PASSWORD=qwerty"
