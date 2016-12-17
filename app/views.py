@@ -37,11 +37,15 @@ class NoteView(GenericView):
         updated = await cursor.fetchone()
         return dict(updated)
 
+    async def get(self):
+        async with self.aquire_db() as conn:
+            return json_response(data=await self.get_note(conn))
+
     async def put(self):
         async with self.aquire_db() as conn:
-            _ = await self.update_note(conn)
-            updated = await self.get_note(conn)
-        return json_response(data=updated)
+            await self.update_note(conn)
+            return json_response(data=await self.get_note(conn))
+
 
 
 class NoteCollectionView(GenericView):
